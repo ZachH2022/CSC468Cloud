@@ -3,5 +3,5 @@ FROM mysql/mysql-server:latest
 ENV MYSQL_DATABASE mydatabase
 ENV MYSQL_ROOT_PASSWORD mypassword
 
-COPY data.csv /docker-entrypoint-initdb.d/
+COPY cattle.csv /docker-entrypoint-initdb.d/
 COPY init-db.sql /docker-entrypoint-initdb.d/
