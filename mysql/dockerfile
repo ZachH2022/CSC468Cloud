@@ -1,1 +1,11 @@
+FROM mysql/mysql-server:latest
 
+ENV MYSQL_ROOT_PASSWORD=your_password
+ENV MYSQL_DATABASE=csc468
+
+COPY cattle.csv /cattle.csv
+
+RUN /entrypoint.sh mysqld & \
+    sleep 30s && \
+    mysql -u root -pyour_password -e "CREATE TABLE cattle (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), breed VARCHAR(255))" && \
+    mysqlimport -u root -pyour_password --local csc468 /cattle.csv
