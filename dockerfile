@@ -4,6 +4,7 @@ FROM python:latest
 # Set environment variables for MySQL
 ENV MYSQL_DATABASE=mydatabase
 ENV MYSQL_ROOT_PASSWORD=myrootpassword
+ENV MYSQL_TCP_PORT=3304
 
 # Copy the SQL script and CSV file into the container
 COPY init-db.sql /docker-entrypoint-initdb.d/
