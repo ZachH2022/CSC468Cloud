@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sql-serv-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sql-serv
+  template:
+    metadata:
+      labels:
+        app: sql-serv
+    spec:
+      containers:
+      - name: sql-serv
+        image: <your_dockerhub_username>/sql-serv:latest
+        ports:
+        - containerPort: 3306
