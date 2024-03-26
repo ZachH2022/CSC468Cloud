@@ -1,12 +1,9 @@
-#!/usr/bin/env python3
-
 # Use the official MySQL image as the base
 FROM mysql:latest
 
 # Set environment variables for MySQL
 ENV MYSQL_DATABASE=mydatabase
 ENV MYSQL_ROOT_PASSWORD=myrootpassword
-ENV MYSQL_TCP_PORT=3308
 
 # Copy the SQL script and CSV file into the container
 COPY init-db.sql /docker-entrypoint-initdb.d/
@@ -21,6 +18,3 @@ COPY populate_db.py /tmp/
 
 # Run the Python script to populate the database
 RUN python3 /tmp/populate_db.py
-
-# Expose the custom port
-EXPOSE 3308
