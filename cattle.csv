@@ -1,0 +1,11 @@
+name,breed,weight_kg,height_cm,description
+Angus,Angus,800,140,"Black, naturally polled cattle originating from Scotland."
+Holstein,Holstein,680,147,"Large, black-and-white dairy cattle breed from the Netherlands."
+Jersey,Jersey,450,120,"Small, fawn-colored dairy cattle breed from the Channel Island of Jersey."
+Hereford,Hereford,680,132,"Red-colored cattle with a white face, originated from Herefordshire, England."
+Simmental,Simmental,900,140,"Dual-purpose breed of cattle from Switzerland known for their good milk and meat production."
+Limousin,Limousin,850,135,"Distinctive golden-red colored cattle breed from the Limousin region of France."
+Charolais,Charolais,1100,145,"Large, white-colored cattle breed from France known for their meat quality."
+Brahman,Brahman,900,152,"Heat-tolerant cattle breed developed in the United States with a distinctive hump over the shoulders."
+Gelbvieh,Gelbvieh,850,140,"Durable, versatile cattle breed from Germany known for its good maternal traits."
+Ayrshire,Ayrshire,500,125,"Red and white dairy cattle breed from Scotland known for its high milk yield."
