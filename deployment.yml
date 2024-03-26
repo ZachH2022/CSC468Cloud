@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sql-serv-deployment
+  name: sql-serv-zh
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: sql-serv
+      app: sql-serv-zh
   template:
     metadata:
       labels:
-        app: sql-serv
+        app: sql-serv-zh
     spec:
       containers:
-      - name: sql-serv
-        image: <your_dockerhub_username>/sql-serv:latest
+      - name: sql-serv-zh
+        image: ighost007/sql-serv:latest
         ports:
-        - containerPort: 3306
+        - containerPort: 3304
