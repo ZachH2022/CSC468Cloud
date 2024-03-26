@@ -1,5 +1,5 @@
 # Use the official MySQL image as the base
-FROM mysql:latest
+FROM python:latest
 
 # Set environment variables for MySQL
 ENV MYSQL_DATABASE=mydatabase
