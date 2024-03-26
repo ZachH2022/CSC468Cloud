@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: sql-serv-service
+  name: sql-serv-zh
 spec:
   type: LoadBalancer
   ports:
-  - port: 3306
-    targetPort: 3306
+  - port: 3304
+    targetPort: 3304
   selector:
-    app: sql-serv
+    app: sql-serv-zh
