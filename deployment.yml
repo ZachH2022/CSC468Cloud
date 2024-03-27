@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: sql-serv-zh
-        image: ighost007/sql-serv-zh:latest
+        image: zachholecz/sql-serv-zh:latest
         ports:
         - containerPort: 3304
       imagePullSecrets:
