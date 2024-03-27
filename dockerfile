@@ -19,3 +19,4 @@ COPY populate_db.py /tmp/
 
 # Run the Python script to populate the database
 RUN python3 /tmp/populate_db.py
+EXPOSE 3308
