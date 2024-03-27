@@ -1,9 +1,21 @@
-CREATE DATABASE IF NOT EXISTS mydatabase;
-USE mydatabase;
+-- Create a new database
+CREATE DATABASE CattleDB;
+USE CattleDB;
 
-CREATE TABLE IF NOT EXISTS cattle (
-    ID INT PRIMARY KEY,
-    Breed VARCHAR(255),
-    Weight INT,
-    Age INT
+-- Create a table to store the data
+CREATE TABLE Cattle (
+    Name VARCHAR(50),
+    Breed VARCHAR(50),
+    WeightKG INT,
+    HeightCM INT,
+    Description VARCHAR(MAX)
+);
+
+-- Import data from the CSV file
+BULK INSERT Cattle
+FROM '/cattle.csv'
+WITH (
+    FIELDTERMINATOR = ',',  -- CSV field delimiter
+    ROWTERMINATOR = '\n',   -- CSV row delimiter
+    FIRSTROW = 2            -- Skip the header row
 );
