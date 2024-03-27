@@ -1,22 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sql-serv-zh
+  name: kubesql
   namespace: zh938207
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: sql-serv-zh
+      app: kubesql
   template:
     metadata:
       labels:
-        app: sql-serv-zh
+        app: kubesql
     spec:
       containers:
-      - name: sql-serv-zh
-        image: zachholecz/sql-serv-zh:latest
+      - name: sql-container-zh
+        image: ighost007/kubesql:latest
         ports:
         - containerPort: 3304
-      imagePullSecrets:
-      - name: my-docker-credentials
