@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: sql-serv-zh
-        image: ighost007/sql-serv:latest
+        image: ighost007/sql-serv-zh:latest
         ports:
         - containerPort: 3304
