@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: sql-serv-zh
+  namespace: zh938207
 spec:
   replicas: 1
   selector:
@@ -17,3 +18,5 @@ spec:
         image: ighost007/sql-serv-zh:latest
         ports:
         - containerPort: 3304
+      imagePullSecrets:
+      - name: my-docker-credentials
