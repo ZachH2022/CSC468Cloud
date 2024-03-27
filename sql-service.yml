@@ -4,9 +4,10 @@ metadata:
   name: kubesql-service
   namespace: zh938207
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
   - port: 3304
     targetPort: 3304
+    protocol: TCP
   selector:
-    app: sql-serv-zh
+    app: zh938207
