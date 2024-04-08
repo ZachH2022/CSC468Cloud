@@ -1,22 +1,20 @@
-# Use the official MySQL image as the base
-FROM python:latest
+# Use an official Node.js runtime as the base image
+FROM node:14-alpine
 
-# Set environment variables for MySQL
-ENV MYSQL_DATABASE=mydatabase
-ENV MYSQL_ROOT_PASSWORD=myrootpassword
-ENV MYSQL_TCP_PORT=3304
+# Set the working directory in the container
+WORKDIR /app
 
-# Copy the SQL script and CSV file into the container
-COPY init-db.sql /docker-entrypoint-initdb.d/
-COPY cattle.csv /tmp/cattle.csv
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
 
-# Install Python and necessary libraries
-RUN apt-get update && apt-get install -y python3 python3-pip
-RUN pip3 install pandas mysql-connector-python
+# Install dependencies
+RUN npm install
 
-# Copy the Python script to populate the database from the CSV file
-COPY populate_db.py /tmp/
+# Copy the rest of your application's source code to the working directory
+COPY . .
 
-# Run the Python script to populate the database
-RUN python3 /tmp/populate_db.py
-EXPOSE 3308
+# Build your React app for production
+RUN npm run build
+
+# Set the command to run your app
+CMD ["npm", "start"]
